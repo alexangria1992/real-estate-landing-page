@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import CountryDropdown from "./Countrydropdown";
 import PropertyDropdown from "./PropertyDropdown";
 import PriceRangeDropdown from "./PriceRangeDropdown";
 
 import { RiSearch2Line } from "react-icons/ri";
+import { HouseContext } from "./HouseContext";
 
 const Search = () => {
+  const { houses } = useContext(HouseContext);
+  console.log(houses);
   return (
     <div
       className="px-[30px] py-6 border-2 border-green-400 max-w-[1170px] mx-auto flex flex-col 
