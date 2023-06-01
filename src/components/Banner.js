@@ -6,10 +6,10 @@ import Search from "../components/Search";
 
 const Banner = () => {
   return (
-    <section className="border-2 border-blue-400 h-full max-h-[640px] mb-8 xl:mb-24 ">
-      <div className="border-2 border-red-300 flex flex-col lg:flex-row">
+    <section className=" h-full max-h-[640px] mb-8 xl:mb-24 ">
+      <div className=" flex flex-col lg:flex-row">
         <div
-          className="border-2 border-green-400 lg:ml-8 xl:ml-[135px] flex flex-col 
+          className=" lg:ml-8 xl:ml-[135px] flex flex-col 
         items-center lg:items-start text-center lg:text-left flex-1 px-4 lg:px-0
         "
         >
