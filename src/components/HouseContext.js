@@ -18,11 +18,11 @@ const HouseContextProvider = ({ children }) => {
     const allCountries = houses.map((house) => {
       return house.country;
     });
-    console.log(allCountries);
+    // console.log(allCountries);
 
     //Remove Duplicates
     const uniqueCountries = ["Location (any)", ...new Set(allCountries)];
-    console.log(uniqueCountries);
+    // console.log(uniqueCountries);
 
     // set Countries state
     setCountries(uniqueCountries);
@@ -33,13 +33,13 @@ const HouseContextProvider = ({ children }) => {
     const allProperties = houses.map((house) => {
       return house.type;
     });
-    console.log(allProperties);
+    // console.log(allProperties);
 
     //Remove Duplicates
     const uniqueProperties = ["Location (any)", ...new Set(allProperties)];
-    console.log(allProperties);
+    // console.log(allProperties);
 
-    // set Countries state
+    // // set Countries state
     setProperties(uniqueProperties);
   }, []);
 

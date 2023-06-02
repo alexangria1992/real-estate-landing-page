@@ -6,7 +6,7 @@ import { RiHome5Line, RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 const PropertyDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { property, setProperty, properties } = useContext(HouseContext);
-  console.log(properties);
+  // console.log(properties);
   return (
     <Menu as="div" className="dropdown relative">
       <Menu.Button

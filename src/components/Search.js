@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import PropertyDropdown from "./PropertyDropdown";
 import PriceRangeDropdown from "./PriceRangeDropdown";
 import CountryDropdown from "./CountryDropdown";
@@ -8,7 +8,7 @@ import { HouseContext } from "./HouseContext";
 const Search = () => {
   const { handleClick } = useContext(HouseContext);
   const { houses } = useContext(HouseContext);
-  console.log(houses);
+  // console.log(houses);
   return (
     <div
       className="px-[30px] py-6 border-2 border-green-400 max-w-[1170px] mx-auto flex flex-col 
