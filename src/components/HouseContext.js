@@ -45,7 +45,8 @@ const HouseContextProvider = ({ children }) => {
 
   const handleClick = () => {
     // console.log(country, property, price);
-
+    // set Loading
+    setLoading(true);
     // create a function that checks if the string incliues '(any)
     const isDefault = (str) => {
       return str.split(" ").includes("(any)");
@@ -114,7 +115,13 @@ const HouseContextProvider = ({ children }) => {
       }
     });
 
-    console.log(newHouses);
+    // console.log(newHouses);
+    setTimeout(() => {
+      return (
+        newHouses.length < 1 ? setHouses([]) : setHouses(newHouses),
+        setLoading(false)
+      );
+    }, 1000);
   };
 
   return (
