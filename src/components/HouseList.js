@@ -10,7 +10,7 @@ import { ImSpinner2 } from "react-icons/im";
 
 const HouseList = () => {
   const { houses, loading } = useContext(HouseContext);
-  console.log(houses);
+  // console.log(houses);
 
   return (
     <section className="mb-20 border-2 border-red-600">

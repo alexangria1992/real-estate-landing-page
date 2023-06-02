@@ -44,7 +44,77 @@ const HouseContextProvider = ({ children }) => {
   }, []);
 
   const handleClick = () => {
-    console.log("clicked");
+    // console.log(country, property, price);
+
+    // create a function that checks if the string incliues '(any)
+    const isDefault = (str) => {
+      return str.split(" ").includes("(any)");
+    };
+    // console.log(isDefault(country));
+    // console.log(price);
+    // get first value of price and parse it to number
+    const minPrice = parseInt(price.split(" ")[0]);
+    // get second value of price which is the
+    // maximum price and parse it to number
+    const maxPrice = parseInt(price.split(" ")[2]);
+    // console.log(maxPrice);
+
+    const newHouses = housesData.filter((house) => {
+      // console.log(parseInt(house.price));
+      const housePrice = parseInt(house.price);
+      //if all values are selected
+      if (
+        house.country === country &&
+        house.type === property &&
+        housePrice >= minPrice &&
+        housePrice <= maxPrice
+      ) {
+        return house;
+      }
+
+      // if all values are default
+      if (isDefault(country) && isDefault(property) && isDefault(price)) {
+        return house;
+      }
+
+      // if country is not default
+      if (!isDefault(country) && isDefault(property) && isDefault(price)) {
+        return house.country === country;
+      }
+
+      // if property is not default
+      if (!isDefault(property) && isDefault(country) && isDefault(price)) {
+        return house.type === property;
+      }
+
+      //if price is not default
+      if (!isDefault(price) && isDefault(country) && isDefault(property)) {
+        if (housePrice >= minPrice && housePrice <= maxPrice) {
+          return house;
+        }
+      }
+
+      // if country and property is not default
+      if (!isDefault(country) && !isDefault(property) && isDefault(price)) {
+        return house.country === country && house.type === property;
+      }
+
+      // if country and price is not default
+      if (!isDefault(country) && isDefault(property) && !isDefault(price)) {
+        if (housePrice >= minPrice && housePrice <= maxPrice) {
+          return house.country === country;
+        }
+      }
+
+      // property and price is not default
+      if (!isDefault(country) && !isDefault(property) && !isDefault(price)) {
+        if (housePrice >= minPrice && housePrice <= maxPrice) {
+          return house.type === property;
+        }
+      }
+    });
+
+    console.log(newHouses);
   };
 
   return (
